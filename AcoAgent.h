@@ -11,6 +11,7 @@ public:
 	void setCityNum(int);
 	void setCityWeight(std::vector<std::vector<int>> );
 	void setFitness(int);
+	void printSolution();
 	~AcoAgent();
 private:
 	void erase(int,std::vector<int>& );
@@ -18,6 +19,8 @@ private:
 	std::vector<std::vector<double>> tau;
 	std::vector<std::vector<double>> eta;
 	std::vector<int> roundgo;
+	std::vector<int> solution;
+	int minFitness;
 	double alpha;
 	double beta;
 	double Q;

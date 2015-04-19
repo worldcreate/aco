@@ -6,7 +6,7 @@ AcoAgent::AcoAgent(){
 	beta=5.0;
 	rho=0.5;
 	Q=100;
-
+	minFitness=INT_MAX;
 	fp=fopen("test.csv","w");
 }
 
@@ -117,6 +117,9 @@ void AcoAgent::setFitness(int fit){
 		}
 		fprintf(fp,"\n");
 	}
+	if(minFitness>fit){
+		solution=roundgo;
+	}
 }
 
 void AcoAgent::erase(int n,std::vector<int> &omega){
@@ -127,6 +130,14 @@ void AcoAgent::erase(int n,std::vector<int> &omega){
 			break;
 		}
 	}
+}
+
+void AcoAgent::printSolution(){
+	printf("solution\n");
+	for(int i=0;i<solution.size();i++){
+		printf("%d,",solution[i]);
+	}
+	printf("\n");
 }
 
 AcoAgent::~AcoAgent(){
