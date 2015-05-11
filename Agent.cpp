@@ -12,6 +12,10 @@ void Agent::setFitness(int value){
 	fitness=value;
 }
 
-void Agent::setCityWeight(std::vector<std::vector<int>> cost){
+void Agent::setCityWeight(std::vector<std::vector<double> > cost){
 	weight=cost;
+}
+
+int Agent::getFitness(){
+	return fitness;
 }

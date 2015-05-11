@@ -8,11 +8,12 @@ public:
 	Agent();
 	virtual std::vector<int> getCityTurn()=0;
 	virtual void setCityNum(int);
-	virtual void setCityWeight(std::vector<std::vector<int>> );
+	virtual void setCityWeight(std::vector<std::vector<double> > );
 	virtual void setFitness(int);
+	int getFitness();
 protected:
 	int fitness;
-	std::vector<std::vector<int>> weight;
+	std::vector<std::vector<double> > weight;
 	int cityNum;
 };
 

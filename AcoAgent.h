@@ -6,26 +6,21 @@
 
 class AcoAgent:public Agent{
 public:
-	AcoAgent();
+	AcoAgent(const std::vector<std::vector<double> >&);
 	std::vector<int> getCityTurn();
 	void setCityNum(int);
-	void setCityWeight(std::vector<std::vector<int>> );
+	void setCityWeight(std::vector<std::vector<double> > );
 	void setFitness(int);
-	void printSolution();
+	std::vector<int>* getRoundgo();
 	~AcoAgent();
 private:
 	void erase(int,std::vector<int>& );
 private:
-	std::vector<std::vector<double>> tau;
-	std::vector<std::vector<double>> eta;
+	std::vector<std::vector<double> > tau;
+	std::vector<std::vector<double> > eta;
 	std::vector<int> roundgo;
-	std::vector<int> solution;
-	int minFitness;
 	double alpha;
 	double beta;
-	double Q;
-	double rho;
-	FILE *fp;
 };
 
 #endif
